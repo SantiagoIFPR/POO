@@ -13,11 +13,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.santiago.SistemaDeMercado.models.Fornecedor;
 import com.santiago.SistemaDeMercado.repository.FornecedorRepository;
 
 
 @Entity
-public class Fornecedor {
+public class FornecedorController {
 	@Autowired
 	public FornecedorRepository repository;
 	
