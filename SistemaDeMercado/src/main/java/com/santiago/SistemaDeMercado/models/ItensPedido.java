@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class ItensPedido {
@@ -13,6 +14,10 @@ public class ItensPedido {
 	private String qtdeIntensPedido;
 	private String precoIntensPedido;
 	private String validade;
+	@ManyToOne
+	private Pedido pedido;
+	@ManyToOne
+	private Produtos produtos;
 	public long getId() {
 		return Id;
 	}
@@ -37,4 +42,17 @@ public class ItensPedido {
 	public void setValidade(String validade) {
 		this.validade = validade;
 	}
+	public Pedido getPedido() {
+		return pedido;
+	}
+	public void setPedido(Pedido pedido) {
+		this.pedido = pedido;
+	}
+	public Produtos getProdutos() {
+		return produtos;
+	}
+	public void setProdutos(Produtos produtos) {
+		this.produtos = produtos;
+	}
+	
 }

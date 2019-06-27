@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Produtos implements Serializable {
@@ -19,6 +20,8 @@ public class Produtos implements Serializable {
 	private String marca;
 	private String categoria;
 	private Double codigodebarras;
+	@ManyToOne
+	private Fornecedor fornecedor;
 	public long getId() {
 		return id;
 	}
@@ -64,5 +67,12 @@ public class Produtos implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	public Fornecedor getFornecedor() {
+		return fornecedor;
+	}
+	public void setFornecedor(Fornecedor fornecedor) {
+		this.fornecedor = fornecedor;
+	}
+	
 	
 }
