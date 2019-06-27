@@ -3,10 +3,10 @@ package com.santiago.SistemaDeMercado.controllers;
 import java.util.List;
 import java.util.Optional;
 
-import javax.persistence.Entity;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,7 +17,7 @@ import com.santiago.SistemaDeMercado.models.Fornecedor;
 import com.santiago.SistemaDeMercado.repository.FornecedorRepository;
 
 
-@Entity
+@Controller
 public class FornecedorController {
 	@Autowired
 	public FornecedorRepository repository;
@@ -50,7 +50,7 @@ public class FornecedorController {
 		repository.delete(e);
 		return lista();
 	}
-	@PostMapping("/salvarEstoque")
+	@PostMapping("/salvarFornecedor")
 	public ModelAndView salvar(@Valid Fornecedor fornecedor, BindingResult result ) {
 		if(result.hasErrors()) {
 			

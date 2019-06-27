@@ -3,10 +3,10 @@ package com.santiago.SistemaDeMercado.controllers;
 import java.util.List;
 import java.util.Optional;
 
-import javax.persistence.Entity;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,7 +19,7 @@ import com.santiago.SistemaDeMercado.repository.EstoqueRepository;
 
 
 
-@Entity
+@Controller
 public class EntradaEstoqueController {
 	@Autowired
 	public EstoqueRepository repository;
