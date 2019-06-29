@@ -18,7 +18,8 @@ public class Produtos implements Serializable {
 	private Double precocusto;
 	private Double precodevenda;
 	private String marca;
-	private String categoria;
+	@ManyToOne
+	private CategoriaProduto categoriaproduto;
 	private Double codigodebarras;
 	@ManyToOne
 	private Fornecedor fornecedor;
@@ -52,11 +53,11 @@ public class Produtos implements Serializable {
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
-	public String getCategoria() {
-		return categoria;
+	public CategoriaProduto getCategoriaproduto() {
+		return categoriaproduto;
 	}
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
+	public void setCategoriaproduto(CategoriaProduto categoriaproduto) {
+		this.categoriaproduto = categoriaproduto;
 	}
 	public Double getCodigodebarras() {
 		return codigodebarras;

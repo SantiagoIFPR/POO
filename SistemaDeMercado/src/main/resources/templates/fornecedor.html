@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" >
+<title>Listar Fornecedores</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="main" class="container-fluid">
+ <h3 class="page-header">Listar Fornecedores</h3>
+</div>
+<div id="list" class="row">
+ 
+    <div class="table-responsive col-md-12">
+        <table class="table table-striped" cellspacing="0" cellpadding="0">
+		 	<thead>
+		 		<tr>
+		 			<th>ID</th>
+		 			<th>Nome</th>
+		 			<th>RazaoSocial</th>
+		 			<th>Endereco</th>
+		 			<th>Cidade</th>
+		 			<th>Telefone</th>
+		 			<th>Cpf/Cnpj</th>
+		 			<th>Bairro</th>
+		 			<th>Email</th>
+		 			<th>Inscrição Estadual</th>
+		 		</tr>
+		 	</thead>
+		 	<tbody>
+		 		<tr th:each="fornecedor : ${fornecedor}">
+		 			<td th:text="${fornecedor.id}"></td>
+		 			<td th:text="${fornecedor.nome}"></td>
+		 			<td th:text="${fornecedor.razaosocial}"></td>
+		 			<td th:text="${fornecedor.endereco}"></td>	
+		 			<td th:text="${fornecedor.cidade.nome}"></td>
+		 			<td th:text="${fornecedor.fone}"></td>
+		 			<td th:text="${fornecedor.cnpjcpf}"></td>
+		 			<td th:text="${fornecedor.bairro}"></td>
+		 			<td th:text="${fornecedor.cep}"></td>
+		 			<td th:text="${fornecedor.email}"></td>
+		 			<td th:text="${fornecedor.inscricaoestadual}"></td> 			
+		 			
+		 			<td>
+		 			<a class="btn btn-warning btn-xs" th:href="@{/editarFornecedor/{id}(id=${fonecedor.id})}">Editar</a>
+		 			<a class="btn btn-danger btn-xs" th:href="@{/removerFornecedor/{id}(id=${fornecedor.id})}">Remover</a>
+		 			</td>
+		 		</tr>
+		 	</tbody>
+		 </table>
+	</div>
+</div>
+<div class="form-group">
+	<div class="col-md-2">
+ 		<a class="form-control input-md btn btn-primary" href="/adicionarFornecedor">Adicionar</a>
+ 	</div>
+ </div>
+ 		
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+</body>
+</html>
