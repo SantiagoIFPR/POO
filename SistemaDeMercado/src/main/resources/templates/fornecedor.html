@@ -3,7 +3,7 @@
 	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" >
-<title>Listar Fornecedores</title>
+<title>Listar Fornecedor</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
@@ -19,32 +19,33 @@
 		 		<tr>
 		 			<th>ID</th>
 		 			<th>Nome</th>
-		 			<th>RazaoSocial</th>
-		 			<th>Endereco</th>
+		 			<th>CNPJ/CPF</th>
+		 			<th>Razão Social</th>
+		 			<th>Endereço</th>
 		 			<th>Cidade</th>
-		 			<th>Telefone</th>
-		 			<th>Cpf/Cnpj</th>
 		 			<th>Bairro</th>
-		 			<th>Email</th>
+		 			<th>CEP</th>
+		 			<th>Fone</th>
+		 			<th>E-mail</th>
 		 			<th>Inscrição Estadual</th>
+		 			<th></th>
 		 		</tr>
 		 	</thead>
 		 	<tbody>
 		 		<tr th:each="fornecedor : ${fornecedor}">
 		 			<td th:text="${fornecedor.id}"></td>
 		 			<td th:text="${fornecedor.nome}"></td>
-		 			<td th:text="${fornecedor.razaosocial}"></td>
-		 			<td th:text="${fornecedor.endereco}"></td>	
-		 			<td th:text="${fornecedor.cidade.nome}"></td>
-		 			<td th:text="${fornecedor.fone}"></td>
 		 			<td th:text="${fornecedor.cnpjcpf}"></td>
+		 			<td th:text="${fornecedor.razaosocial}"></td>
+		 			<td th:text="${fornecedor.endereco}"></td>
+		 			<td th:text="${fornecedor.cidade.nome}"></td>
 		 			<td th:text="${fornecedor.bairro}"></td>
 		 			<td th:text="${fornecedor.cep}"></td>
+		 			<td th:text="${fornecedor.fone}"></td>
 		 			<td th:text="${fornecedor.email}"></td>
-		 			<td th:text="${fornecedor.inscricaoestadual}"></td> 			
-		 			
+		 			<td th:text="${fornecedor.inscricaoestadual}"></td>
 		 			<td>
-		 			<a class="btn btn-warning btn-xs" th:href="@{/editarFornecedor/{id}(id=${fonecedor.id})}">Editar</a>
+		 			<a class="btn btn-warning btn-xs" th:href="@{/editarFornecedor/{id}(id=${fornecedor.id})}">Editar</a>
 		 			<a class="btn btn-danger btn-xs" th:href="@{/removerFornecedor/{id}(id=${fornecedor.id})}">Remover</a>
 		 			</td>
 		 		</tr>
