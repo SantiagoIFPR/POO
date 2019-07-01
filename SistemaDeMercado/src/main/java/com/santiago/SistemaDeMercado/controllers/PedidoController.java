@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.santiago.SistemaDeMercado.models.Pedido;
+import com.santiago.SistemaDeMercado.repository.FornecedorRepository;
 import com.santiago.SistemaDeMercado.repository.PedidoRepository;
 
 
@@ -22,6 +23,8 @@ import com.santiago.SistemaDeMercado.repository.PedidoRepository;
 public class PedidoController {
 	@Autowired
 	public PedidoRepository repository;
+	@Autowired
+	public FornecedorRepository repositoryFornecedor;
 	
 	@GetMapping("/listaPedido")
 	public ModelAndView lista() {
@@ -35,6 +38,7 @@ public class PedidoController {
 	public ModelAndView add(Pedido pedido) {
 		ModelAndView mv = new ModelAndView("/addpedido");
 		mv.addObject("pedido", pedido);
+		mv.addObject("fornecedor", repositoryFornecedor.findAll());
 		return mv;
 	}
 	
