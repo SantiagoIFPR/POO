@@ -15,14 +15,14 @@ public class Fornecedor implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	private String nome;
+	private String cnpjcpf;
 	private String razaosocial;
 	private String endereco;
 	@ManyToOne
 	private Cidade cidade;
-	private String fone;
-	private String cnpjcpf;
 	private String bairro;
 	private String cep;
+	private String fone;
 	private String email;
 	private String inscricaoestadual;
 	public long getId() {
@@ -37,6 +37,12 @@ public class Fornecedor implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	public String getCnpjcpf() {
+		return cnpjcpf;
+	}
+	public void setCnpjcpf(String cnpjcpf) {
+		this.cnpjcpf = cnpjcpf;
+	}
 	public String getRazaosocial() {
 		return razaosocial;
 	}
@@ -49,24 +55,11 @@ public class Fornecedor implements Serializable {
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
-
 	public Cidade getCidade() {
 		return cidade;
 	}
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
-	}
-	public String getFone() {
-		return fone;
-	}
-	public void setFone(String fone) {
-		this.fone = fone;
-	}
-	public String getCnpjcpf() {
-		return cnpjcpf;
-	}
-	public void setCnpjcpf(String cnpjcpf) {
-		this.cnpjcpf = cnpjcpf;
 	}
 	public String getBairro() {
 		return bairro;
@@ -79,6 +72,12 @@ public class Fornecedor implements Serializable {
 	}
 	public void setCep(String cep) {
 		this.cep = cep;
+	}
+	public String getFone() {
+		return fone;
+	}
+	public void setFone(String fone) {
+		this.fone = fone;
 	}
 	public String getEmail() {
 		return email;
@@ -95,5 +94,4 @@ public class Fornecedor implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-		
 }
