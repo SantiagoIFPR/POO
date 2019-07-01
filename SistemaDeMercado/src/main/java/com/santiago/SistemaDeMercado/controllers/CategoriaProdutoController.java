@@ -6,6 +6,7 @@ import java.util.Optional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,7 @@ import com.santiago.SistemaDeMercado.models.CategoriaProduto;
 import com.santiago.SistemaDeMercado.repository.CategoriaRepository;
 import com.santiago.SistemaDeMercado.repository.FornecedorRepository;
 
+@Controller
 public class CategoriaProdutoController {
 	@Autowired
 	public CategoriaRepository repositoryCategoria;
