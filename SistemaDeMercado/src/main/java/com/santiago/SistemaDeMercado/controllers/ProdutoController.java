@@ -14,12 +14,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.santiago.SistemaDeMercado.models.Produtos;
+import com.santiago.SistemaDeMercado.repository.CategoriaRepository;
+import com.santiago.SistemaDeMercado.repository.FornecedorRepository;
 import com.santiago.SistemaDeMercado.repository.ProdutoRepository;
 
 @Controller
 public class ProdutoController {
 	@Autowired
 	public ProdutoRepository repository;
+	@Autowired
+	public CategoriaRepository repositoryCategoria;
+	@Autowired
+	public FornecedorRepository repositoryFornecedor;
 	
 	@GetMapping("/listaProduto")
 	public ModelAndView lista() {
@@ -32,7 +38,9 @@ public class ProdutoController {
 	@GetMapping("/adicionarProduto")
 	public ModelAndView add(Produtos produtos) {
 		ModelAndView mv = new ModelAndView("/addproduto");
-		mv.addObject("produtos", produtos);
+		mv.addObject("produto", produtos);
+		mv.addObject("categoriaproduto", repositoryCategoria.findAll());
+		mv.addObject("fornecedor", repositoryFornecedor.findAll());
 		return mv;
 	}
 	
