@@ -39,7 +39,7 @@ public class ProdutoController {
 	public ModelAndView add(Produtos produtos) {
 		ModelAndView mv = new ModelAndView("/addproduto");
 		mv.addObject("produto", produtos);
-		mv.addObject("categoriaproduto", repositoryCategoria.findAll());
+		mv.addObject("categoria", repositoryCategoria.findAll());
 		mv.addObject("fornecedor", repositoryFornecedor.findAll());
 		return mv;
 	}
